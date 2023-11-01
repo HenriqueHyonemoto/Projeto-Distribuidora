@@ -49,12 +49,12 @@ Trabalho para 22/11/2023
 ## 1:1 - Distribuidora( <br>
 distribuidoraid bigserial, <--------------------- agenciaid bigserial, //id <br>
 numero_distribuidora varchar(50) UNIQUE, <- numero_agencia varchar(50) UNIQUE,  //numero <br>
-sede_distribuidora, <---------------------------- banco varchar(40), // país/cidade da sede <br>
-nome_distribuidora varchar(40), <---------------- descricao varchar(40), //nome <br>
-fundacao date, <--------------------------------- data_criacao date, //data de criação <br> 
-taxa_vendas decimal, <--------------------------- taxa_publicacao decimal, //taxa das vendas do album<br>
-removido boolean, <------------------------------ removido boolean, <br>
-ativo boolean, <--------------------------------- ativo boolean,<br>
+sede_distribuidora, <--------------------------- banco varchar(40), // país/cidade da sede <br>
+nome_distribuidora varchar(40), <------------- descricao varchar(40), //nome <br>
+fundacao date, <-------------------------------- data_criacao date, //data de criação <br> 
+taxa_vendas decimal, <------------------------- taxa_publicacao decimal, //taxa das vendas do album<br>
+removido boolean, <--------------------------- removido boolean, <br>
+ativo boolean, <-------------------------------- ativo boolean,<br>
 ) <br>
  <br>
 
