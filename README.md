@@ -47,7 +47,7 @@ Trabalho para 22/11/2023
 
 
 ## 1:1 - Distribuidora( <br>
-distribuidoraid bigserial, <------------------- agenciaid bigserial, //id <br>
+distribuidoraid bigserial, <--------------------- agenciaid bigserial, //id <br>
 numero_distribuidora varchar(50) UNIQUE, <- numero_agencia varchar(50) UNIQUE,  //numero <br>
 sede_distribuidora, <---------------------- banco varchar(40), // país/cidade da sede <br>
 nome_distribuidora varchar(40), <---------- descricao varchar(40), //nome <br>
