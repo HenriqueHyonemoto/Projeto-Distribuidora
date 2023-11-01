@@ -45,7 +45,7 @@ Trabalho para 22/11/2023
 
 # Tabelas
 
-## 1:1
+1:1
 ## Distribuidora( <br>
 distribuidoraid bigserial, <br>
 numero_distribuidora varchar(50) UNIQUE, <br>
@@ -56,7 +56,8 @@ removido boolean, <br>
 ativo boolean, <br>
 ) <br>
  <br>
-## 0:N <br>
+ 
+0:N <br>
 ## Album( <br>
 albumid bigserial, <br>
 numero_album varchar(50) UNIQUE, <br>
