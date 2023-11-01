@@ -12,7 +12,7 @@ npm i
 
 ### usuario e senha
 ```
-qwe
+admin
 ```
 ### Linux
 ```
