@@ -42,3 +42,28 @@ Trabalho para 22/11/2023
     • Pode ser feito em qualquer linguagem de programação.
     • Proteger Rotas das APIs com JWT ou outro mecanismo de token.
     • Realizar CRUD (GetAll, GetById, Insert, Update, Delete) em uma tabela do modulo financeiro em sistema ERP.
+
+# Tabelas
+
+## 1:1
+## Distribuidora(
+distribuidoraid bigserial,
+numero_distribuidora varchar(50) UNIQUE,
+nome_distribuidora varchar(40),
+data_criacao date,
+taxa_publicacao decimal,
+removido boolean,
+ativo boolean,
+)
+
+## 0:N
+## Album(
+albumid bigserial,
+numero_album varchar(50) UNIQUE,
+nome_album varchar(40),
+data_publicacao date,
+valor decimal,
+removido boolean,
+ativo boolean,
+)
+    
