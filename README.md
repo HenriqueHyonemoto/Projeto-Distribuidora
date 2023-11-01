@@ -47,23 +47,23 @@ Trabalho para 22/11/2023
 
 ## 1:1
 ## Distribuidora( <br>
-distribuidoraid bigserial,
-numero_distribuidora varchar(50) UNIQUE,
-nome_distribuidora varchar(40),
-data_criacao date,
-taxa_publicacao decimal,
-removido boolean,
-ativo boolean,
-)
-
-## 0:N
-## Album(
-albumid bigserial,
-numero_album varchar(50) UNIQUE,
-nome_album varchar(40),
-data_publicacao date,
-valor decimal,
-removido boolean,
-ativo boolean,
-)
+distribuidoraid bigserial, <br>
+numero_distribuidora varchar(50) UNIQUE, <br>
+nome_distribuidora varchar(40), <br>
+data_criacao date, <br>
+taxa_publicacao decimal, <br>
+removido boolean, <br>
+ativo boolean, <br>
+) <br>
+ <br>
+## 0:N <br>
+## Album( <br>
+albumid bigserial, <br>
+numero_album varchar(50) UNIQUE, <br>
+nome_album varchar(40), <br>
+data_publicacao date, <br>
+valor decimal, <br> 
+removido boolean, <br>
+ativo boolean,<br>
+) <br>
     
