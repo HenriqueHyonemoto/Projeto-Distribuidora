@@ -16,11 +16,11 @@ admin
 ```
 ### Linux
 ```
-DEBUG=dw3frontnode:* npm start
+DEBUG=distribuidora_albumfrontnode:* npm start
 ```
 ### Windows
 ```
-set DEBUG=dw3frontNode:*
+set DEBUG=distribuidora_albumfrontNode:*
 ```
 ```
 npm start
