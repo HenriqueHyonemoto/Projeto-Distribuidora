@@ -1,0 +1,373 @@
+@html.extend('layout', function(model){ 
+
+@html.block('content', function(model){
+  <link rel="icon" href="images/tenebris.png" type="image/icon type">
+  <style>
+    #background-video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -100;
+        background: url(https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/504400/ac6891f4a16e9dfbdfef65dc5672b01cc1abf271.jpg)
+        no-repeat center;
+        background-size:cover;
+      }
+    
+            </style>
+<video autoplay muted loop id="background-video">
+  <source src="videos/VideoBack.mp4" type="video/mp4">
+</video>
+<main>
+  
+
+  <div class="container-fluid px-4" style="padding:60px">
+    <!--importação de imagens bugado-->
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="card-header"></div>
+
+        <div class="card-body" style=
+        "
+        padding: 15px;
+         outline: 2px solid yellow ;
+    outline-style: dotted;
+    background-color: black;
+    color: white;
+    box-shadow: 3px 3px  #00FF00;
+    margin-top:10px;
+        "
+        >
+          <div style="margin-top:10px;" class="col-sm-6 col-xxl-12">
+            <h1 class="mt-2" style="color:white">@model.title</h1>
+    <ol class="breadcrumb mb-2">
+      <li class="breadcrumb-item active">@model.title</li>
+    </ol>
+            <form id="form">
+              <div class="mb-1" style="display: none">
+                <input type="number" name="distribuidoraid" class="form-control" id="distribuidoraid" />
+              </div>
+             <div class="mb-1 row ">
+                <label for="numero_distribuidora" class="col-sm-2 col-xxl-1 col-form-label required">Número da Distribuidora:</label>
+                <div class="col-sm-4 col-xxl-2">
+                  <input type="text" name="numero_distribuidora" class="form-control" id="numero_distribuidora" maxlength="10"/>
+                </div>
+                
+                <label for="sede_distribuidora" class="col-sm-2 col-xxl-1 col-form-label required">Sede:</label>
+                <div class="col-sm-4 col-xxl-3">
+                  <input type="text" name="sede_distribuidora" class="form-control" id="sede_distribuidora" maxlength="10"/>
+                </div>
+
+                <label for="nome_distribuidora" class="col-sm-2 col-xxl-1 col-form-label required">Nome da Distribuidora:</label>
+                <div class="col-sm-4 col-xxl-3">
+                  <input type="text" name="nome_distribuidora" class="form-control" id="nome_distribuidora" maxlength="50"/>
+                </div>
+              </div>
+
+              <div class="mb-1 row ">
+                <label for="fundacao" class="col-sm-2 col-xxl-1 col-form-label required">Data de Criação</label>
+                <div class="col-sm-4 col-xxl-2">
+                  <input type="date" name="fundacao" class="form-control" id="fundacao"/>
+                </div>
+
+                <label for="taxa_vendas" class="col-sm-2 col-xxl-1 col-form-label required">Taxa das Vendas:</label>
+                <div class="col-sm-4 col-xxl-3">
+                  <input type="text" name="taxa_vendas" class="form-control" id="taxa_vendas" placeholder="0.0" maxlength="5"/>
+                </div>
+              </div>
+
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="ativo" id="ativo" checked disabled />
+                <label class="form-check-label" for="ativo"> ativo </label>
+              </div>
+            </form>
+          </div>
+          <div class="">
+            <button type="button" class="btn btn-warning me-2" onclick="btnSalvar()" id="btnSalvar" hidden>
+              Salvar
+            </button>
+
+            <button type="button" class="btn btn-warning me-2" onclick="btnAlterar()" id="btnAlterar" hidden>
+              Alterar
+            </button>
+
+            <button type="button" class="btn btn-warning me-2" onclick="btnSalvarAlteracao()" id="btnSalvarAlteracao" hidden>
+              Salvar Alteração
+            </button>
+
+            <button type="button" class="btn btn-info me-2" onclick="btnCancelarAlteracao()" id="btnCancelarAlteracao" hidden>
+              Cancelar Alteração
+            </button>
+
+            <button type="" class="btn btn-danger" onclick="btnRemover()" id="btnRemover" hidden>
+              Remover
+            </button>
+
+            <button type="button" class="btn btn-primary" onclick="window.location.href = '/distribuidora'" id="btnFechar">
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+}) })
+
+<script>
+  const form = document.getElementById("form");
+  var oper = "@model.oper";
+
+  window.onload = limpaForm();
+
+  //@ Limpa o conteúdo dos campos do formulário
+  async function limpaForm() {
+
+    $("#form").each(function() {
+      this.reset();
+    });
+
+    // Mostra os botões de acordo com o tipo da operação
+    if (oper == "c") {
+      $("#btnSalvar").prop("hidden", false);
+      habilitaForm();
+    }
+
+    if (oper == "u") {
+      $("#btnAlterar").prop("hidden", false);
+    }
+
+    //Necessário para buscar dados de acordo com o ID para serem alterados
+    if (oper == "u") {
+      idBusca = "@model.idBusca";
+      await getDados(idBusca);
+    }
+
+    //Coloca o distribuidora no primeiro campo do formulário
+    $("#numero_distribuidora").focus();
+  }
+
+  //@ Busca os dados de acordo com o ID para serem alterados
+  async function getDados(idBuscaPar) {
+    console.log("[getDados] idBusca", idBuscaPar);
+
+    try {
+      const resp = await axios.post(
+        "/distribuidora/getDados", {
+          idBusca: idBuscaPar
+        }, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (resp.data.status == "ok") {
+        $("#distribuidoraid").val(resp.data.registro.distribuidoraid);
+        $("#numero_distribuidora").val(resp.data.registro.numero_distribuidora);
+        $("#sede_distribuidora").val(resp.data.registro.sede_distribuidora);
+        $("#nome_distribuidora").val(resp.data.registro.nome_distribuidora);
+        const dataCriacao = new Date(resp.data.registro.fundacao);
+        $("#fundacao").val(dataCriacao.toISOString().split('T')[0]);
+        //$("#fundacao").val(resp.data.registro.fundacao);
+        $("#taxa_vendas").val(resp.data.registro.taxa_vendas);
+        if (resp.data.registro.ativo) {
+          $("#ativo").prop("checked", true);
+        } else {
+          $("#ativo").prop("checked", false);
+        }
+
+      } /* else {
+        alert("Houve erro ao buscar os dados dos alunos!");
+      } */
+    } catch (error) {
+      alert("[view_caddistribuidora|getDados]Ocorreu um erro inesperado!" + error);
+    }
+  }
+
+  //@ Valida o formulário antes de salvá-lo
+  function validaForm(formDataPar) {
+    var validado = true;
+    $("#form input, #form select").each(function(index) {
+      var input = $(this);
+      if (
+        input.attr("type") == "text" &&
+        input.prop("required") &&
+        String(input.val()).length == 0
+      ) {
+        alert("Campo obrigatório");
+        $(input).focus();
+        validado = false;
+        return false;
+      }
+    });
+
+    if (formDataPar.get("ativo") == "on") {
+      formDataPar.set("ativo", true);
+    } else {
+      formDataPar.set("ativo", false);
+    }
+    formDataPar.set("removido", false);
+
+    return validado;
+  }
+
+  //@ Salva os dados
+  async function btnSalvar() {
+    const formData = new FormData(form);
+
+    const validado = validaForm(formData);
+    if (!validado) {
+      return;
+    }
+
+    try {
+      resp = await axios.post("/distribuidora/insertdistribuidora", formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (resp.data.status == "ok") {
+        alert(resp.data.mensagem);
+        limpaForm();
+      } else {
+        alert("Houve um erro: " + resp.data.mensagem);
+      }
+    } catch (error) {
+      alert("[view_caddistribuidora|btnSalvar]Ocorreu um erro inesperado!" + error);
+    }
+  }
+
+  //@ Habilita form para alteração
+  function habilitaForm() {
+    $("#numero_distribuidora").prop("class", "form-control");
+    $("#numero_distribuidora").prop("readonly", false);
+
+    $("#nome_distribuidora").prop("class", "form-control");
+    $("#nome_distribuidora").prop("readonly", false);
+
+    $("#ativo").prop("disabled", false);
+  }
+
+  //@ Habilita a alteração
+  async function btnAlterar() {
+    $("#btnSalvarAlteracao").prop("hidden", false);
+    $("#btnCancelarAlteracao").prop("hidden", false);
+    $("#btnRemover").prop("hidden", false);
+    $("#btnAlterar").prop("hidden", true);
+
+    habilitaForm();
+  }
+
+  //@ Salva a alteração
+  //@ console.log("[view_caddistribuidora|btnSalvarAlteracao] :", )
+  async function btnSalvarAlteracao() {
+    const formData = new FormData(form);
+    const validado = validaForm(formData);
+    if (!validado) {
+      return;
+    }
+
+    try {
+      resp = await axios.post("/distribuidora/updatedistribuidora", formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (resp.data.status == "ok") {
+        alert(resp.data.mensagem);
+        window.open("/distribuidora/opendistribuidoraUpdate/" + String($("#distribuidoraid").val()), "_self");
+      } else {
+        alert("Houve um erro: " + resp.data.mensagem);
+      }
+    } catch (error) {
+      alert("[view_caddistribuidora|btnSalvarAlteracao]Ocorreu um erro inesperado!" + error);
+    }
+
+
+  }
+
+  //@ Cancela a alteração
+  //@ console.log("[view_caddistribuidora|btnCancelarAlteracao] Valor do id", $("#distribuidoraid").val());    
+  async function btnCancelarAlteracao() {
+    window.open("/distribuidora/opendistribuidoraUpdate/" + String($("#distribuidoraid").val()), "_self");
+  }
+
+  //@ Remove distribuidora
+  //@ console.log("[view_caddistribuidora|btnSalvarAlteracao] :", )
+  async function btnRemover() { 
+
+    var confirma = confirm("Deseja realmente remover o registro?");
+    if (!confirma) {
+      return; //@ Se o usuário selecionar Cancela, o registro não é removido.
+    }
+    const formData = new FormData(form);
+
+    try {
+      resp = await axios.post("/distribuidora/deletedistribuidora", {
+        distribuidoraid: formData.get("distribuidoraid")
+      }, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (resp.data.status == "ok") {
+        alert(resp.data.mensagem);
+        window.open("/distribuidora", "_self");
+      } else {
+        alert("Houve um erro: " + resp.data.mensagem);
+      }
+    } catch (error) {
+      alert("[view_caddistribuidora|btnSalvarAlteracao]Ocorreu um erro inesperado!" + error);
+    }
+  }
+
+
+  $(function() {
+    $("#rendafamiliar").maskMoney();
+  });
+
+  async function deleteAlunos(prontuarioPar) {
+    resp = await axios.post(
+      "/alunos/DeleteAlunos", {
+        id: $("#id").val(),
+      }, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    if (resp.data.status == "ok") {
+      alert("Aluno removido com sucesso!");
+      window.open("/alunos", "_self");
+    } else {
+      alert("Houve erro ao remover os dados dos alunos!");
+    }
+  }
+
+  async function testeFormData() {
+    const form = document.getElementById("form");
+    const formData = new FormData(form);
+
+    // for (const [key, value] of formData) {
+    //     console.log("Valores:" + `${key}: ${value}`);
+    // }
+
+    console.log("Prontuario: ", formData.get("prontuario"));
+  }
+</script>
+
+<style>
+  .required:after {
+    content: " *";
+    color: red;
+  }
+</style>
