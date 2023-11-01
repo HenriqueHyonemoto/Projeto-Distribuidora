@@ -57,7 +57,6 @@ ativo boolean, <br>
 ) <br>
  <br>
  
-0:N <br>
 ## - 0:N Album( <br>
 albumid bigserial, <br>
 numero_album varchar(50) UNIQUE, <br>
