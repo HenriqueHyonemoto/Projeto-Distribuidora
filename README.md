@@ -46,7 +46,7 @@ Trabalho para 22/11/2023
 # Tabelas
 
 ## 1:1
-## Distribuidora(
+## Distribuidora( <br>
 distribuidoraid bigserial,
 numero_distribuidora varchar(50) UNIQUE,
 nome_distribuidora varchar(40),
