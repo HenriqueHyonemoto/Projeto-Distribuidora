@@ -10,13 +10,31 @@ create table IF NOT EXISTS distribuidora (
     removido boolean DEFAULT false
 );
 
-
 insert into distribuidora values 
     (default, '001', 'Centro','Santander','20/08/2000',1.5, true),
     (default, '007', 'Norte','Banco do Brasil','04/09/1985',0.5, true),
     (default, '238', 'Dentro do shopping Zona Sul','Bradesco','16/03/1974',1.2, true),
     (default, '102', 'Ao lado do mercado Proença','Caixa Economica Federal','25/06/1988',0.8, false)
     ON CONFLICT DO NOTHING;
+
+--drop table album
+create table IF NOT EXISTS album (
+    albumid bigserial constraint pk_album PRIMARY KEY,
+    numero_album varchar(50) UNIQUE,
+    nome_album varchar(40),
+    data_publicacao date,
+    valor numeric(6,2),
+    ativo boolean,
+    distribuidoraid bigint constraint fk_album_distribuidora REFERENCES distribuidora,
+    removido boolean DEFAULT false
+);
+
+insert into album values 
+(default,'001','Lo-fi infinito','2000-01-31',6891.60, true,
+ (SELECT distribuidoraid from distribuidora where numero_distribuidora = '001')),
+(default,'002','José das Neves','2024-02-08',372.41, true,
+ (SELECT distribuidoraid from distribuidora where numero_distribuidora = '007'))
+ ON CONFLICT DO NOTHING;
 
 --Usuarios do sistema
 create table IF NOT EXISTS usuarios (
