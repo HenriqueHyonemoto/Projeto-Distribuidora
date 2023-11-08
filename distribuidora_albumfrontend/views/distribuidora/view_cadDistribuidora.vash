@@ -18,10 +18,7 @@
         background-size:cover;
       }
     
-      input[type=text]:focus {
-     background-color: rgb(0, 0, 0);
-     color:rgb(30, 255, 0);
-}
+     
             </style>
 <video autoplay muted loop id="background-video">
   <source src="/videos/VideoBack.mp4" type="video/mp4">
@@ -29,10 +26,15 @@
 <main>
   
 
-  <div class="container-fluid px-4" style="padding:60px">
+  <div class="container-fluid px-4 " style ="/* Can be in percentage also. */
+  height: auto;
+  margin-left: 30%;
+  padding: 60px;
+  position: relative;
+">
     <div class="row">
-      <div class="col-xl-12">
-        <div class="card-header"></div>
+      <div class="col-xl-3">
+        <div class="card-header" ></div>
 
         <div class="card-body" style=
         "
@@ -54,31 +56,31 @@
               <div class="mb-1" style="display: none">
                 <input type="number" name="distribuidoraid" class="form-control" id="distribuidoraid" />
               </div>
-             <div class="mb-1 row ">
-                <label for="numero_distribuidora" class="col-sm-2 col-xxl-1 col-form-label required">Número da Distribuidora:</label>
-                <div class="col-sm-4 col-xxl-2">
+             <div class="mb-1 ">
+                <label for="numero_distribuidora" class="col-sm-2 col-xxl-12 col-form-label required">Número da Distribuidora:</label>
+                <div class="col-sm-4 col-xxl-12">
                   <input type="text" name="numero_distribuidora" class="form-control" id="numero_distribuidora" maxlength="10"/>
                 </div>
                 
-                <label for="sede_distribuidora" class="col-sm-2 col-xxl-1 col-form-label required">Sede:</label>
-                <div class="col-sm-4 col-xxl-3">
+                <label for="sede_distribuidora" class="col-sm-2 col-xxl-12 col-form-label required">Sede:</label>
+                <div class="col-sm-4 col-xxl-12">
                   <input type="text" name="sede_distribuidora" class="form-control" id="sede_distribuidora" maxlength="10"/>
                 </div>
 
-                <label for="nome_distribuidora" class="col-sm-2 col-xxl-1 col-form-label required">Nome da Distribuidora:</label>
-                <div class="col-sm-4 col-xxl-3">
+                <label for="nome_distribuidora" class="col-sm-2 col-xxl-12 col-form-label required">Nome da Distribuidora:</label>
+                <div class="col-sm-4 col-xxl-12">
                   <input type="text" name="nome_distribuidora" class="form-control" id="nome_distribuidora" maxlength="50"/>
                 </div>
               </div>
 
-              <div class="mb-1 row ">
-                <label for="fundacao" class="col-sm-2 col-xxl-1 col-form-label required">Data de Criação</label>
-                <div class="col-sm-4 col-xxl-2">
+              <div class="mb-1 ">
+                <label for="fundacao" class="col-sm-2 col-xxl-12 col-form-label required">Data de Criação</label>
+                <div class="col-sm-4 col-xxl-12">
                   <input type="date" name="fundacao" class="form-control" id="fundacao"/>
                 </div>
 
-                <label for="taxa_vendas" class="col-sm-2 col-xxl-1 col-form-label required">Taxa das Vendas:</label>
-                <div class="col-sm-4 col-xxl-3">
+                <label for="taxa_vendas" class="col-sm-2 col-xxl-12 col-form-label required">Taxa das Vendas:</label>
+                <div class="col-sm-4 col-xxl-12">
                   <input type="text" name="taxa_vendas" class="form-control" id="taxa_vendas" placeholder="0.0" maxlength="5"/>
                 </div>
               </div>
