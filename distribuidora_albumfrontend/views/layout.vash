@@ -3,7 +3,7 @@
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-black" style="height: 73px;border: 2px solid yellow ;
     border-style: dotted;
-    box-shadow: 3px 3px  #00FF00;">
+    box-shadow: 3px 3px  #ff00b3;">
         <!-- Navbar Brand-->
         <a class="navbar-brand ps-3" href="index.html"><img src="/images/IFSP-VTP-Logo-Branca.png" style="width:150px"></a>
         <!-- Sidebar Toggle-->
@@ -33,7 +33,7 @@
         <div id="layoutSidenav_nav">
             <nav class="sb-sidenav accordion " style = "background-color: rgb(0, 0, 0);border: 2px solid yellow ;
             border-style: dotted;
-            box-shadow: 2px 2px  #00FF00;" id="sidenavAccordion">
+            box-shadow: 2px 2px  #ff00b3;" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading" STYLE="color:white">Principal</div>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="sb-sidenav-footer" style = "background-color: rgb(19, 19, 19);color:white;border: 2px solid yellow ;
                 border-style: dotted;
-                box-shadow: 3px 3px  #00FF00;">
+                box-shadow: 3px 3px  #ff00b3;">
                     <div class="small">Bem vindo:</div>
                     @model.userName
                 </div>

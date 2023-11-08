@@ -13,7 +13,7 @@
         top: 0;
         bottom: 0;
         z-index: -100;
-        background: url(https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/504400/ac6891f4a16e9dfbdfef65dc5672b01cc1abf271.jpg)
+        background: url(img/VideoImg.jpg)
         no-repeat center;
         background-size:cover;
       }
@@ -27,6 +27,7 @@
 
   <div class="container-fluid px-4" style="padding:60px">
     <!--importação de imagens bugado-->
+    <img src="images/IFSP-VTP-Logo-Branca.png">
     <div class="row">
       <div class="col-xl-12">
         <div class="card-header"></div>
@@ -38,7 +39,7 @@
     outline-style: dotted;
     background-color: black;
     color: white;
-    box-shadow: 3px 3px  #00FF00;
+    box-shadow: 3px 3px  #ff00b3;
     margin-top:10px;
         "
         >
