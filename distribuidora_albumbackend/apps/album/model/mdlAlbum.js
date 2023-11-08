@@ -4,7 +4,7 @@ const getAllAlbum = async () => {
   return (
     await db.query(
       "SELECT *, (SELECT nome_distribuidora from distribuidora where distribuidoraid = album.distribuidoraid)" +
-      "FROM album where removido = false ORDER BY nome ASC"
+      "FROM album where removido = false ORDER BY nome_album ASC"
     )
   ).rows;
 };
@@ -13,7 +13,7 @@ const getAlbumByID = async (albumIDPar) => {
   return (
     await db.query(
       "SELECT *, (SELECT nome_distribuidora from distribuidora where distribuidoraid = album.distribuidoraid)" +
-      "FROM album WHERE albumid = $1 and removido = false ORDER BY nome ASC",
+      "FROM album WHERE albumid = $1 and removido = false ORDER BY nome_album ASC",
       [albumIDPar]
     )
   ).rows;
