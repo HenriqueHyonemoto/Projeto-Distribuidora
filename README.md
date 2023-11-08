@@ -28,7 +28,7 @@ npm start
 
 Trabalho para 22/11/2023
 
-### O aluno deverá implementar um conjunto de APIs e interface gráfica para realizar o CRUD referente a duas tabelas que se relacionam do tipo 1:N
+### O album deverá implementar um conjunto de APIs e interface gráfica para realizar o CRUD referente a duas tabelas que se relacionam do tipo 1:N
 
 # Front End
     • Usar template (SBADMIN) de ADM para o FRONT no repositório do professor.

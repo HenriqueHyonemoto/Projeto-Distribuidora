@@ -66,20 +66,20 @@
 .datatable-pagination .active a:focus,
 .datatable-pagination .active a:hover {
 	background-color: #d9d9d9;
-	cursor: default;
+	distribuidorar: default;
 }
 
 .datatable-pagination .ellipsis a,
 .datatable-pagination .disabled a,
 .datatable-pagination .disabled a:focus,
 .datatable-pagination .disabled a:hover {
-	cursor: not-allowed;
+	distribuidorar: not-allowed;
 }
 
 .datatable-pagination .disabled a,
 .datatable-pagination .disabled a:focus,
 .datatable-pagination .disabled a:hover {
-	cursor: not-allowed;
+	distribuidorar: not-allowed;
 	opacity: 0.4;
 }
 
@@ -172,7 +172,7 @@
 	display: table;
 }
 
-table.datatable-table:focus tr.datatable-cursor > td:first-child {
+table.datatable-table:focus tr.datatable-distribuidorar > td:first-child {
 	border-left: 3px blue solid;
 }
 

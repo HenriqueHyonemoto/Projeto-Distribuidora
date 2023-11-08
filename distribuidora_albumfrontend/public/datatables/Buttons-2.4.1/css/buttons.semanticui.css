@@ -70,7 +70,7 @@ div.dtb-popover-close {
   height: 22px;
   text-align: center;
   border-radius: 3px;
-  cursor: pointer;
+  distribuidorar: pointer;
   z-index: 2003;
 }
 
@@ -330,7 +330,7 @@ div.dt-button-collection div.dt-button-split div:first-child {
   width: auto !important;
   border-left: none !important;
   position: relative;
-  cursor: pointer;
+  distribuidorar: pointer;
   display: block;
   border: none;
   height: auto;
@@ -422,7 +422,7 @@ div.dt-buttons .dt-button-split-drop span.dt-button-down-arrow {
 }
 
 span.dt-button-spacer {
-  cursor: inherit;
+  distribuidorar: inherit;
 }
 span.dt-button-spacer.bar {
   padding-left: 1.5em;
@@ -442,7 +442,7 @@ div.dt-button-collection span.dt-button-spacer.bar {
 div.dt-buttons.ui.basic.buttons .button.dt-button-spacer {
   background: rgba(34, 36, 38, 0.05) !important;
   box-shadow: none;
-  cursor: initial;
+  distribuidorar: initial;
 }
 div.dt-buttons.ui.basic.buttons .button.dt-button-spacer:hover {
   background-color: rgba(34, 36, 38, 0.05) !important;

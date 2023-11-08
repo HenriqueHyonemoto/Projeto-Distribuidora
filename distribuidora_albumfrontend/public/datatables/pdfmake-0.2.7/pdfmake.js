@@ -52790,7 +52790,7 @@ var hhea = new r.Struct({
   // Minimum right sidebearing value
   xMaxExtent: r.int16,
   caretSlopeRise: r.int16,
-  // Used to calculate the slope of the cursor (rise/run); 1 for vertical
+  // Used to calculate the slope of the distribuidorar (rise/run); 1 for vertical
   caretSlopeRun: r.int16,
   // 0 for vertical
   caretOffset: r.int16,
@@ -64238,7 +64238,7 @@ var TTFFont = (_class$4 = /*#__PURE__*/function () {
       return this.post.underlineThickness;
     }
     /**
-     * If this is an italic font, the angle the cursor should be drawn at to match the font design
+     * If this is an italic font, the angle the distribuidorar should be drawn at to match the font design
      * @type {number}
      */
   }, {

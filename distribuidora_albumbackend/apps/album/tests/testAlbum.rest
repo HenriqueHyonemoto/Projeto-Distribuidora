@@ -1,0 +1,56 @@
+### teste de buscar todos os album
+GET http://localhost:40000/getAllAlbum HTTP/1.1
+content-type: application/json
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NzQ3ODI5NzksInVzZXJuYW1lIjoicXdlIn0.SlYYCm8J6wlpb3i1jJcSvhSz6VjwKvzPOxza8P6-hzo
+
+{    
+    
+}
+
+### teste de buscar album por ID
+POST http://localhost:40000/getAlbumByID HTTP/1.1
+content-type: application/json
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5MTQxMTU5NCwiZXhwIjoxNjkxNDExODk0fQ.1Ig9H4D6QMW0TSkwJIyv7YZjBO35u5WkOpqhoSBRA1U
+
+{    
+    "albumid": 1
+}
+
+### teste de inserção de album
+POST http://localhost:40000/insertAlbum HTTP/1.1
+content-type: application/json
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5MTQzNTg3MSwiZXhwIjoxNjkxNDM2NDcxfQ.hAh0VyRfEXvYmhunlJALD-qda8pYr2zzAHobn1yua20
+
+{    
+    "albumid": 0,
+    "numero_album": "003",
+    "nome_album": "Som de Chuva",
+    "data_publicacao": "1999-12-12",
+    "valor": 1000.00,
+    "distribuidoraid": 2,
+    "removido": false
+}
+
+### teste de atualização de album
+POST http://localhost:40000/updateAlbum HTTP/1.1
+content-type: application/json
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5MTQzNTg3MSwiZXhwIjoxNjkxNDM2NDcxfQ.hAh0VyRfEXvYmhunlJALD-qda8pYr2zzAHobn1yua20
+
+{    
+    "albumid": 1,
+    "numero_album": "004",
+    "nome_album": "Musicas para corrida",
+    "data_publicacao": "2014-08-07",
+    "valor": 90500.80,
+    "distribuidoraid": 1,
+    "removido": false
+}
+
+### teste de atualização de album
+POST http://localhost:40000/DeleteAlbum HTTP/1.1
+content-type: application/json
+//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5MTQ5MDg3NCwiZXhwIjoxNjkxNDkxNDc0fQ.1ABhMgWYm8gGKy7q90GOPQpNoY5M1LLzpCltKxFjcEo
+
+{    
+    "albumid": 55  
+}

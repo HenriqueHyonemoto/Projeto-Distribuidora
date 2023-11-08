@@ -5,7 +5,7 @@ div.dt-autofill-handle {
   z-index: 10;
   box-sizing: border-box;
   background: #888;
-  cursor: pointer;
+  distribuidorar: pointer;
 }
 
 div.dtk-focus-alt div.dt-autofill-handle {
@@ -48,7 +48,7 @@ div.dt-autofill-list div.dtaf-popover-close {
   height: 22px;
   text-align: center;
   border-radius: 3px;
-  cursor: pointer;
+  distribuidorar: pointer;
   z-index: 12;
 }
 div.dt-autofill-list > div.dt-autofill-list-items > button {
@@ -60,7 +60,7 @@ div.dt-autofill-list > div.dt-autofill-list-items > button {
   border: 1px solid rgba(0, 0, 0, 0.175);
   background-color: #f6f6f6;
   text-align: left;
-  cursor: pointer;
+  distribuidorar: pointer;
 }
 div.dt-autofill-list > div.dt-autofill-list-items > button:hover {
   background-color: #ebebeb;

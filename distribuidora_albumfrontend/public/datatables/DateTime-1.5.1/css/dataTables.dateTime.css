@@ -89,7 +89,7 @@ div.dt-datetime table button {
   color: inherit;
   text-align: center;
   padding: 4px 0;
-  cursor: pointer;
+  distribuidorar: pointer;
   margin: 0;
 }
 div.dt-datetime table button span {
@@ -110,7 +110,7 @@ div.dt-datetime div.dt-datetime-label {
   padding: 5px 6px;
   border: 1px solid transparent;
   box-sizing: border-box;
-  cursor: pointer;
+  distribuidorar: pointer;
 }
 div.dt-datetime div.dt-datetime-label:hover {
   border: 1px solid #ddd;
@@ -121,7 +121,7 @@ div.dt-datetime div.dt-datetime-label select {
   position: absolute;
   top: 6px;
   left: 0;
-  cursor: pointer;
+  distribuidorar: pointer;
   opacity: 0;
 }
 div.dt-datetime.horizontal {
@@ -180,7 +180,7 @@ div.dt-datetime div.dt-datetime-iconRight button {
   text-indent: 30px;
   height: 100%;
   width: 100%;
-  cursor: pointer;
+  distribuidorar: pointer;
 }
 div.dt-datetime div.dt-datetime-iconLeft {
   position: absolute;
