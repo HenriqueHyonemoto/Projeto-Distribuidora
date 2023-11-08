@@ -1,10 +1,10 @@
 --drop table distribuidora
 create table IF NOT EXISTS distribuidora (
-    distribuidoraid bigserial constraint pk_distribuidora PRIMARY KEY,
+       distribuidoraid bigserial constraint pk_distribuidora PRIMARY KEY,
     numero_distribuidora varchar(5) UNIQUE,
     nome_distribuidora VARCHAR(60),
     sede_distribuidora varchar(40),
-    data_criacao date,
+    fundacao date,
     taxa_vendas numeric(4,2),
     ativo boolean,
     removido boolean DEFAULT false
