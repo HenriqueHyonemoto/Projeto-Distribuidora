@@ -187,7 +187,7 @@
         }
 
       } /* else {
-        alert("Houve erro ao buscar os dados dos alunos!");
+        alert("Houve erro ao buscar os dados dos album!");
       } */
     } catch (error) {
       alert("[view_caddistribuidora|getDados]Ocorreu um erro inesperado!" + error);
@@ -339,9 +339,9 @@
     $("#rendafamiliar").maskMoney();
   });
 
-  async function deleteAlunos(prontuarioPar) {
+  async function deleteAlbum(prontuarioPar) {
     resp = await axios.post(
-      "/alunos/DeleteAlunos", {
+      "/album/DeleteAlbum", {
         id: $("#id").val(),
       }, {
         headers: {
@@ -351,10 +351,10 @@
     );
 
     if (resp.data.status == "ok") {
-      alert("Aluno removido com sucesso!");
-      window.open("/alunos", "_self");
+      alert("Album removido com sucesso!");
+      window.open("/album", "_self");
     } else {
-      alert("Houve erro ao remover os dados dos alunos!");
+      alert("Houve erro ao remover os dados dos album!");
     }
   }
 

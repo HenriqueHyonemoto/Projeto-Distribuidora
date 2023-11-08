@@ -173,7 +173,7 @@ p {
 abbr[title] {
   -webkit-text-decoration: underline dotted;
           text-decoration: underline dotted;
-  cursor: help;
+  distribuidorar: help;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
 }
@@ -367,7 +367,7 @@ select {
 }
 
 [role=button] {
-  cursor: pointer;
+  distribuidorar: pointer;
 }
 
 select {
@@ -391,7 +391,7 @@ button:not(:disabled),
 [type=button]:not(:disabled),
 [type=reset]:not(:disabled),
 [type=submit]:not(:disabled) {
-  cursor: pointer;
+  distribuidorar: pointer;
 }
 
 ::-moz-focus-inner {
@@ -477,7 +477,7 @@ iframe {
 
 summary {
   display: list-item;
-  cursor: pointer;
+  distribuidorar: pointer;
 }
 
 progress {
@@ -2022,7 +2022,7 @@ progress {
   overflow: hidden;
 }
 .form-control[type=file]:not(:disabled):not([readonly]), [type=file].datatable-input:not(:disabled):not([readonly]) {
-  cursor: pointer;
+  distribuidorar: pointer;
 }
 .form-control:focus, .datatable-input:focus {
   color: #212529;
@@ -2131,7 +2131,7 @@ textarea.form-control-lg {
   padding: 0.375rem;
 }
 .form-control-color:not(:disabled):not([readonly]) {
-  cursor: pointer;
+  distribuidorar: pointer;
 }
 .form-control-color::-moz-color-swatch {
   border: 0 !important;
@@ -2279,7 +2279,7 @@ textarea.form-control-lg {
   opacity: 0.5;
 }
 .form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {
-  cursor: default;
+  distribuidorar: default;
   opacity: 0.5;
 }
 
@@ -2377,7 +2377,7 @@ textarea.form-control-lg {
   width: 100%;
   height: 0.5rem;
   color: transparent;
-  cursor: pointer;
+  distribuidorar: pointer;
   background-color: #dee2e6;
   border-color: transparent;
   border-radius: 1rem;
@@ -2406,7 +2406,7 @@ textarea.form-control-lg {
   width: 100%;
   height: 0.5rem;
   color: transparent;
-  cursor: pointer;
+  distribuidorar: pointer;
   background-color: #dee2e6;
   border-color: transparent;
   border-radius: 1rem;
@@ -2814,7 +2814,7 @@ textarea.form-control-lg {
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
-  cursor: pointer;
+  distribuidorar: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -3724,7 +3724,7 @@ input[type=date]:focus {
 .nav-link.disabled {
   color: var(--bs-nav-link-disabled-color);
   pointer-events: none;
-  cursor: default;
+  distribuidorar: default;
 }
 
 .nav-tabs {
@@ -6034,7 +6034,7 @@ input[type=date]:focus {
   margin-right: 3px;
   margin-left: 3px;
   text-indent: -999px;
-  cursor: pointer;
+  distribuidorar: pointer;
   background-color: #fff;
   background-clip: padding-box;
   border: 0;
@@ -6690,7 +6690,7 @@ input[type=date]:focus {
   display: inline-block;
   min-height: 1em;
   vertical-align: middle;
-  cursor: wait;
+  distribuidorar: wait;
   background-color: currentcolor;
   opacity: 0.5;
 }
@@ -11206,13 +11206,13 @@ body {
 .datatable-pagination .disabled a,
 .datatable-pagination .disabled a:focus,
 .datatable-pagination .disabled a:hover {
-  cursor: not-allowed;
+  distribuidorar: not-allowed;
 }
 
 .datatable-pagination .disabled a,
 .datatable-pagination .disabled a:focus,
 .datatable-pagination .disabled a:hover {
-  cursor: not-allowed;
+  distribuidorar: not-allowed;
   opacity: 0.4;
 }
 

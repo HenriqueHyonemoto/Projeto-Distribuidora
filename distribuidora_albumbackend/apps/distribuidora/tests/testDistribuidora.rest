@@ -10,7 +10,7 @@ content-type: application/json
 ### teste de buscar distribuidora por ID
 POST http://localhost:40000/GetDistribuidoraByID HTTP/1.1
 content-type: application/json
-//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE1MzE4MywiZXhwIjoxNjk4MTUzNzgzfQ.O3F43FZOtxdh_YuGrj02a7Dc06P4qqipLN0kbyZtBrw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE1MzE4MywiZXhwIjoxNjk4MTUzNzgzfQ.O3F43FZOtxdh_YuGrj02a7Dc06P4qqipLN0kbyZtBrw
 
 {    
     "distribuidoraid": 1
@@ -19,7 +19,7 @@ content-type: application/json
 ### teste de inserção de distribuidora
 POST http://localhost:40000/InsertDistribuidora HTTP/1.1
 content-type: application/json
-//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE1MzE4MywiZXhwIjoxNjk4MTUzNzgzfQ.O3F43FZOtxdh_YuGrj02a7Dc06P4qqipLN0kbyZtBrw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE1MzE4MywiZXhwIjoxNjk4MTUzNzgzfQ.O3F43FZOtxdh_YuGrj02a7Dc06P4qqipLN0kbyZtBrw
 
 {    
     "distribuidoraid": 1,
@@ -35,7 +35,7 @@ content-type: application/json
 ### teste de atualização de distribuidora
 POST http://localhost:40000/UpdateDistribuidora HTTP/1.1
 content-type: application/json
-//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE1MzE4MywiZXhwIjoxNjk4MTUzNzgzfQ.O3F43FZOtxdh_YuGrj02a7Dc06P4qqipLN0kbyZtBrw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE1MzE4MywiZXhwIjoxNjk4MTUzNzgzfQ.O3F43FZOtxdh_YuGrj02a7Dc06P4qqipLN0kbyZtBrw
 
 {    
     "distribuidoraid": 1,
@@ -51,7 +51,7 @@ content-type: application/json
 ### teste de remover a distribuidora
 POST http://localhost:40000/DeleteDistribuidora HTTP/1.1
 content-type: application/json
-//Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE1MzE4MywiZXhwIjoxNjk4MTUzNzgzfQ.O3F43FZOtxdh_YuGrj02a7Dc06P4qqipLN0kbyZtBrw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InF3ZSIsImlhdCI6MTY5ODE1MzE4MywiZXhwIjoxNjk4MTUzNzgzfQ.O3F43FZOtxdh_YuGrj02a7Dc06P4qqipLN0kbyZtBrw
 
 {    
     "distribuidoraid": 1 

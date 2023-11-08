@@ -1,7 +1,7 @@
 table.dataTable.dtr-inline.collapsed > tbody > tr > td.child,
 table.dataTable.dtr-inline.collapsed > tbody > tr > th.child,
 table.dataTable.dtr-inline.collapsed > tbody > tr > td.dataTables_empty {
-  cursor: default !important;
+  distribuidorar: default !important;
 }
 table.dataTable.dtr-inline.collapsed > tbody > tr > td.child:before,
 table.dataTable.dtr-inline.collapsed > tbody > tr > th.child:before,
@@ -10,7 +10,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dataTables_empty:before {
 }
 table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control,
 table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control {
-  cursor: pointer;
+  distribuidorar: pointer;
 }
 table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before,
 table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
@@ -35,7 +35,7 @@ table.dataTable.dtr-column > tbody > tr > td.dtr-control,
 table.dataTable.dtr-column > tbody > tr > th.dtr-control,
 table.dataTable.dtr-column > tbody > tr > td.control,
 table.dataTable.dtr-column > tbody > tr > th.control {
-  cursor: pointer;
+  distribuidorar: pointer;
 }
 table.dataTable.dtr-column > tbody > tr > td.dtr-control:before,
 table.dataTable.dtr-column > tbody > tr > th.dtr-control:before,
@@ -129,7 +129,7 @@ div.dtr-modal div.dtr-modal-close {
   height: 22px;
   text-align: center;
   border-radius: 3px;
-  cursor: pointer;
+  distribuidorar: pointer;
   z-index: 12;
 }
 div.dtr-modal div.dtr-modal-background {

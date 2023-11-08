@@ -46,7 +46,7 @@ app.use(
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-//app.use('/alunos', alunosRouter);
+//app.use('/album', albumRouter);
 app.use('/distribuidora',  distribuidoraRouter);
 
 // catch 404 and forward to error handler
