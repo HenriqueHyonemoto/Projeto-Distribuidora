@@ -34,13 +34,13 @@
         outline-style: dotted;
         background-color: black;
         color: white;
-        box-shadow: 3px 3px  #00FF00;">
+        box-shadow: 3px 3px  #ff00b3;">
             <div class="card mx-auto col-10  mt-5 mb-5">
                 <div class="card-body" style ="background-color:black;outline: 2px solid yellow ;
                 outline-style: dotted;
                 background-color: black;
                 color: white;
-                box-shadow: 3px 3px  #00FF00;" >
+                box-shadow: 3px 3px  #ff00b3;" >
                     <h4 class="card-title" style="text-align: center;">Login</h4>
                     <form class="form-login" action="Login" method="POST">
                         <label for="labelusername" class="form-label mt-4">Informe seu usuário</label>
