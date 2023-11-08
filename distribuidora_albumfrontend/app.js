@@ -21,6 +21,7 @@ require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var distribuidoraRouter = require('./routes/rte_distribuidora');
+var albumRouter = require('./routes/rte_album');
 
 var app = express();
 
@@ -46,7 +47,7 @@ app.use(
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-//app.use('/album', albumRouter);
+app.use('/album', albumRouter);
 app.use('/distribuidora',  distribuidoraRouter);
 
 // catch 404 and forward to error handler

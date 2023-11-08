@@ -67,6 +67,24 @@
                             </nav>
                         </div>
 
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo"
+                            data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a STYLE="color:rgb(128, 128, 128)" class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                                    data-bs-target="#pagesCollapseError" aria-expanded="false"
+                                    aria-controls="pagesCollapseError" >
+                                    Albuns
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne"
+                                    data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a STYLE="color:rgb(128, 128, 128)" class="nav-link" href="/album">Manutenção dos Albuns</a>
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div>
+
                     </div>
                 </div>
                 <div class="sb-sidenav-footer" style = "background-color: rgb(19, 19, 19);color:white;border: 2px solid yellow ;

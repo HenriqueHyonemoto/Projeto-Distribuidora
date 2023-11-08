@@ -16,11 +16,11 @@
                     <div class="col-2 ms-1 mt-1 mb-2">
 
                         <button type="button" class="btn btn-primary"
-                            onclick="window.location.href = '/alunos/insertAlunos'">Novo aluno</button>
+                            onclick="window.location.href = '/album/insertAlbum'">Novo Album</button>
                     </div>
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Listagem de alunos
+                        Listagem de Album
                     </div>
 
 
@@ -29,31 +29,31 @@
                             <thead>
                                 <tr>
                                     <th>Ação</th>                                    
-                                    <th>Prontuário</th>
-                                    <th>Nome</th>
-                                    <th>Data Nascimento</th>
-                                    <th>Curso</th>
+                                    <th>Número Do Album</th>
+                                    <th>Nome Do Album</th>
+                                    <th>Data De Publicação</th>
+                                    <th>Distribuidora</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @model.data.registro.forEach(function(registro){
                                 <tr>                                    
-                                    <td><a href="/alunos/viewAlunos/@registro.alunoid/v" class="btn btn-info btn-sm"><i
+                                    td><a href="/album/openalbumUpdate/@registro.albumid" class="btn btn-info btn-sm"><i
                                         class="fa fa-magnifying-glass"></i>Visualizar</a></td>
-                                    <td>@registro.prontuario</td>
-                                    <td>@registro.nome</td>
-                                    <td>@registro.datanascimento</td>
-                                    <td>@registro.descricao</td>
+                                    <td>@registro.numero_album</td>
+                                    <td>@registro.nome_album</td>
+                                    <td>@registro.data_publicacao</td>
+                                    <td>@registro.nome_distribuidora</td>
                                 </tr>
                                 })
                             </tbody>
                             <tfoot>
                                 <tr>
                                     <th>Ação</th>                                    
-                                    <th>Prontuário</th>
-                                    <th>Nome</th>
-                                    <th>Data Nascimento</th>
-                                    <th>Curso</th>
+                                    <th>Número Do Album</th>
+                                    <th>Nome Do Album</th>
+                                    <th>Data publicacao</th>
+                                    <th>Distribuidora</th>
                                 </tr>
                             </tfoot>
                         </table>

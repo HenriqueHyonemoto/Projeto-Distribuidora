@@ -1,0 +1,164 @@
+@html.extend('layout', function(model){
+
+@html.block('content', function(model){
+
+<main>
+
+    <div class="container-fluid px-4">
+        <h1 class="mt-2">@model.title</h1>
+        <ol class="breadcrumb mb-2">
+            <li class="breadcrumb-item active">@model.title</li>
+        </ol>
+        <div class="row">
+            <div class="col-xl-12">
+
+                <div class="card-header"></div>
+
+                <div class="card-body">
+                    <div class="col-xl-5">
+                        <form  id="form">
+                            <div class="mb-1" style="display: none">
+                                <input type="text" name="id" value="@model.data.albumid" class="form-control" id="id">
+                            </div>
+                            <div class="mb-1">
+                                <label for="numero_album" class="form-label">Número do Album</label>
+                                <input type="text" name="numero_album" value="@model.data.numero_album" class="form-control"
+                                    id="numero_album" @(model.oper=='v' ? 'disabled' : '' )>
+                            </div>
+
+                            <div class="mb-1">
+                                <label for="nome_album" class="form-label">nome do Album</label>
+                                <input type="text" name="nome_album" value="@model.data.nome_album" class="form-control" id="nome_album"
+                                    @(model.oper=='v' ? 'disabled' : '' )>
+                            </div>
+
+                            <div class="mb-1">
+                                <label for="valor" class="form-label">Valor do album</label>
+                                <input type="text" name="valor" value="@model.data.valor"
+                                    class="form-control" id="valor" data-thousands="." data-decimal=","
+                                    @(model.oper=='v' ? 'disabled' : '' )>
+                            </div>
+
+                            <div class="mb-1">
+                                <label for="" class="form-label">Distribuidora</label>
+                                <select class="form-select" aria-label="Default select example" id="distribuidoraid"
+                                    @(model.oper=='v' ? 'disabled' : '' ) name="distribuidoraid">
+                                    @model.distribuidora.forEach(function(item){
+                                    @if(model.data.distribuidoraid === item.distribuidoraid) {
+                                    <option value="@item.distribuidoraid" selected>@item.nome_distribuidora</option>
+                                    } else {
+                                    <option value="@item.distribuidoraid">@item.nome_distribuidora</option>
+                                    }
+                                    });
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="data_publicacao" class="form-label">Data da Publicação
+                                <span style="color: red;">*</span></label>
+                                <input type="date" name="data_publicacao" value="@model.data.data_publicacao"
+                                    class="form-control" id="data_publicacao" @(model.oper=='v' ? 'disabled' : '' )>
+                            </div>
+
+                            @if (model.oper=="c") {
+                            <button type="submit" class="btn btn-success me-2" onclick=""
+                                formmethod="POST">Salvar</button>
+                            }
+
+                        </form>
+                        <div>
+                            @if (model.oper=="vu") {
+                            <button type="button" class="btn btn-warning me-2 mb-3" onclick="alteraRegistro()">Salvar
+                                Alteração</button>
+                            }
+
+                            @if (model.oper=="v") {
+                            <button type="button" class="btn btn-warning me-2 mb-3"
+                                onclick="window.open('/album/viewAlbum/' + $('#id').val() + '/vu', '_self')">Alterar</button>
+                            }
+
+                            @if (model.oper=="v") {
+                            <button type="" class="btn btn-danger mb-3" onclick="deleteAlbum()">Remover</button>
+                            }
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="window.location.href = '/album'">Fechar
+                            sem salvar</button>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+})
+
+})
+
+<script>
+
+    $(function () {
+        $('#valor').maskMoney();
+    })
+
+    $('#form').on('submit', function () {
+        if ($('#data_publicacao').val() == "") {
+            // $('#errormessage').html("Please provide at least an email ");
+            alert("Informe a data de publicacao");
+            return false;
+        } else {
+            $('#valor').val($('#valor').maskMoney('unmasked')[0]);
+            return true;
+        }
+    });
+
+    async function alteraRegistro() {
+        // event.preventDefault();        
+        resp = await axios.post("/album/viewAlbum", {
+            id: $("#id").val(),
+            numero_album: $("#numero_album").val(),
+            nome_album: $("#nome_album").val(),
+                    valor: $('#valor').maskMoney('unmasked')[0], //Retira a formatação de money
+            data_publicacao: $("#data_publicacao").val(),
+            distribuidoraid: $("#distribuidoraid").val(),
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        //console.log("[view_cadAlbum.vash|alteraRegistro] valor resp:", resp.data.status);
+        if (resp.data.status == "ok") {
+            alert("Album alterado com sucesso!");
+        } else {
+            alert("Houve erro ao alterar os dados do album!");
+        }
+    }
+
+    async function deleteAlbum(numero_albumPar) {
+        resp = await axios.post("/album/DeleteAlbum", {
+            id: $("#id").val(),
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+
+        if (resp.data.status == "ok") {
+            alert("Album removido com sucesso!");
+            window.open("/album", "_self");
+        } else {
+            alert("Houve erro ao remover os dados do album!");
+        }
+    }
+
+    async function testeFormData() {
+        const form = document.getElementById("form");
+        const formData = new FormData(form);          
+
+        // for (const [key, value] of formData) {
+        //     console.log("Valores:" + `${key}: ${value}`);
+        // }
+
+        console.log("numero_album: ", formData.get("numero_album")); 
+    }
+</script>
