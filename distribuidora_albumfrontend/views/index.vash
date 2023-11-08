@@ -38,7 +38,7 @@
             padding: 15px;
              outline: 2px solid yellow ;
         outline-style: dotted;
-        background-color: black;
+        background-color: rgba(0, 0, 0, 0.850);
         color: white;
         box-shadow: 3px 3px  #ff00b3;
         margin-top:10px;
