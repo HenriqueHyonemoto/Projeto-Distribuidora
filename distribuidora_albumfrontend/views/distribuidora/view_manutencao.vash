@@ -88,10 +88,17 @@
                                 </tr>
                             </tfoot>-->
                         </table>
+                        <button type="button" class="btn btn-primary" style = "margin-left:91%"
+                            onclick="window.location.href = '/album'">Manutenção de Albums</button>
                     </div>
+                    
                 </div>
+                
+                
             </div>
+            
         </div>
+         
     </div>
 </main>
 
