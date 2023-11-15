@@ -37,10 +37,7 @@
     height: 50%;
     position: relative;
     ">
-        <h1 class="mt-4">@model.title</h1>
-        <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">@model.title</li>
-        </ol>
+        
 
         
         <div class="row">
@@ -50,9 +47,13 @@
                 background-color: rgba(0, 0, 0, 0.850);
                 color: white;
                 box-shadow: 3px 3px  #ff00b3;" >
+                <h1 style = "margin-left:10px" class="mt-4">@model.title</h1>
+        <ol class="breadcrumb mb-4">
+            <li style = "margin-left:10px" class="breadcrumb-item active">@model.title</li>
+        </ol>
                     <div class="col-2 ms-1 mt-1 mb-2">
 
-                        <button type="button" class="btn btn-primary"
+                        <button style = "margin-left:10px "type="button" class="btn btn-primary" 
                             onclick="window.location.href = '/album/insertAlbum'">Novo Album</button>
                     </div>
                     <div class="card-header">
@@ -77,13 +78,13 @@
                                 <tr>                                   
                                      <td><a href="/album/viewAlbum/@registro.albumid/v" class="btn btn-info btn-sm"><i class="fa fa-magnifying-glass"></i>Visualizar</a></td> 
                                     <td>@registro.numero_album</td> 
-                                     <td>@registro.nome_album</td> 
+                                    <td>@registro.nome_album</td> 
                                     <td>@registro.data_publicacao</td> 
                                     <td>@registro.nome_distribuidora</td> 
                                  </tr>
                                  })
                             </tbody>
-                            <tfoot>
+                            <!--<tfoot>
                                 <tr>
                                     <th>Ação</th>                                    
                                     <th>Número Do Album</th>
@@ -91,7 +92,7 @@
                                     <th>Data publicacao</th>
                                     <th>Distribuidora</th>
                                 </tr>
-                            </tfoot>
+                            </tfoot>-->
                         </table>
                     </div>
                 </div>

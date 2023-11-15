@@ -6,8 +6,10 @@ const getAllAlbum = (req, res) =>
   (async () => {
     userName = req.session.userName;
     try {
-      resp = await axios.get(process.env.SERVIDOR_DW3 + "/getAllAlbum", {});
-      //console.log("[ctlLogin.js] Valor resp:", resp.data);
+      resp = await axios.get(process.env.SERVIDOR_DW3 + "/getAllAlbum", {headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },});
       res.render("album/view_manutencao", {
         title: "Manutenção de album",
         data: resp.data,
@@ -15,6 +17,7 @@ const getAllAlbum = (req, res) =>
       });
     } catch (erro) {
       console.log("[ctlAlbum.js|getAllAlbum] Try Catch:Erro de requisição");
+
     }
   })();
 
@@ -44,11 +47,14 @@ const insertAlbum = (req, res) =>
         oper = "c";
         distribuidora = await axios.get(
           process.env.SERVIDOR_DW3 + "/GetAllDistribuidora",
-          {}
+          {headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },}
         );
-        //console.log("[crlAlbum|insertAlbum] valor de distribuidora:", distribuidora.data.registro);
+        console.log("[crlAlbum|insertAlbum] valor de distribuidora:", distribuidora.data.registro);
         registro = {
-          albumid: 1,
+          albumid: 0,
           numero_album: "",
           nome_album: "",
           data_publicacao: "",
@@ -60,7 +66,7 @@ const insertAlbum = (req, res) =>
         res.render("album/view_cadAlbum", {
           title: "Cadastro de album",
           data: registro,
-          curso: distribuidora.data.registro,
+          distribuidora: distribuidora.data.registro,
           oper: oper,
           userName: userName,
         });
@@ -79,7 +85,7 @@ const insertAlbum = (req, res) =>
             removido: false,
           },
           {
-            headers: {
+            headers: {  
               "Content-Type": "application/json",
               Authorization: "Bearer " + token,
             },
@@ -102,13 +108,16 @@ const insertAlbum = (req, res) =>
         }
         distribuidora = await axios.get(
           process.env.SERVIDOR_DW3 + "/GetAllDistribuidora",
-          {}
+          {headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },}
         );
         oper = "c";
         res.render("album/view_cadAlbum", {
           title: "Cadastro de album",
           data: registro,
-          curso: distribuidora.data.registro,
+          distribuidora: distribuidora.data.registro,
           oper: oper,
           userName: userName,
         });
@@ -155,14 +164,17 @@ const viewAlbum = (req, res) =>
           );
           distribuidora = await axios.get(
             process.env.SERVIDOR_DW3 + "/GetAllDistribuidora",
-            {}
+            {headers: {
+              "Content-Type": "application/json",
+              Authorization: "Bearer " + token,
+            }}
           );
           console.log("[ctlAlbum|viewAlbum] GET oper:", oper);
 
           res.render("album/view_cadAlbum", {
             title: "Cadastro de album",
             data: registro,
-            curso: distribuidora.data.registro,
+            distribuidora: distribuidora.data.registro,
             oper: oper,
             userName: userName,
           });
@@ -199,6 +211,7 @@ const viewAlbum = (req, res) =>
           res.json({ status: "erro" });
         }
       }
+      
     } catch (erro) {
       res.json({ status: "[ctlAlbum.js|viewAlbum] Album não pode ser alterado" });
       console.log(
@@ -247,9 +260,9 @@ const DeleteAlbum = (req, res) =>
 module.exports = {
   getAllAlbum,
   //cadAlbum,
-  // getAlbumByID,
+  //getAlbumByID,
   viewAlbum,
   insertAlbum,
-  // updateAlbum,
+  //updateAlbum,
   DeleteAlbum,
 };

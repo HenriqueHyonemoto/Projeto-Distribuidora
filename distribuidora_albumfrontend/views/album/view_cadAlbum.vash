@@ -1,21 +1,56 @@
 @html.extend('layout', function(model){
 
 @html.block('content', function(model){
-
+ <style>
+    #background-video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -100;
+        background: url(img/VideoImg.jpg)
+        no-repeat center;
+        background-size:cover;
+      }
+    
+     
+            </style>
+<video autoplay muted loop id="background-video">
+  <source src="/videos/VideoBack.mp4" type="video/mp4">
+</video>
 <main>
 
-    <div class="container-fluid px-4">
+      <div class="container-fluid px-4 " style ="/* Can be in percentage also. */
+  height: auto;
+  margin-left: 32%;
+  padding: 60px;
+  position: relative;
+">
+        <div class="row">
+            <div class="col-xl-3">
+
+                <div class="card-header"></div>
+
+                <div class="card-body" style=
+        "
+        padding: 15px;
+         outline: 2px solid yellow ;
+    outline-style: dotted;
+    background-color: rgba(0, 0, 0, 0.850);
+    color: white;
+    box-shadow: 3px 3px  #ff00b3;
+    margin-top:10px;
+        ">
+                    <div class="col-xl-12">
+                    <div style="margin-top:10px;" class="col-sm-6 col-xxl-12">
         <h1 class="mt-2">@model.title</h1>
         <ol class="breadcrumb mb-2">
             <li class="breadcrumb-item active">@model.title</li>
         </ol>
-        <div class="row">
-            <div class="col-xl-12">
-
-                <div class="card-header"></div>
-
-                <div class="card-body">
-                    <div class="col-xl-5">
                         <form  id="form">
                             <div class="mb-1" style="display: none">
                                 <input type="text" name="id" value="@model.data.albumid" class="form-control" id="id">
@@ -61,7 +96,7 @@
                             </div>
 
                             @if (model.oper=="c") {
-                            <button type="submit" class="btn btn-success me-2" onclick=""
+                            <button type="submit" class="btn btn-warning me-2" onclick=""
                                 formmethod="POST">Salvar</button>
                             }
 
@@ -83,6 +118,7 @@
                         </div>
                         <button type="button" class="btn btn-primary" onclick="window.location.href = '/album'">Fechar
                             sem salvar</button>                        
+                    </div>
                     </div>
                 </div>
             </div>
@@ -118,7 +154,7 @@
             id: $("#id").val(),
             numero_album: $("#numero_album").val(),
             nome_album: $("#nome_album").val(),
-                    valor: $('#valor').maskMoney('unmasked')[0], //Retira a formatação de money
+            valor: $('#valor').maskMoney('unmasked')[0], //Retira a formatação de money
             data_publicacao: $("#data_publicacao").val(),
             distribuidoraid: $("#distribuidoraid").val(),
         }, {

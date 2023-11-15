@@ -24,7 +24,6 @@ create table IF NOT EXISTS album (
     nome_album varchar(40),
     data_publicacao date,
     valor numeric(6,2),
-    ativo boolean,
     distribuidoraid bigint constraint fk_album_distribuidora REFERENCES distribuidora,
     removido boolean DEFAULT false
 );

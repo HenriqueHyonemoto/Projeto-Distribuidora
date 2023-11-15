@@ -1994,6 +1994,8 @@ progress {
   color: #6c757d;
 }
 
+
+
 .form-control, .datatable-input {
   background:#202020;
   color:white;
@@ -3065,11 +3067,23 @@ input[type=password]:focus {
   color:rgb(30, 255, 0);
  border-color:rgb(30, 255, 0);
 }
+select:not(:checked) {
+  background-color: #212529;
+  color:white
+}
 input[type=date]:focus {
   background-color: rgb(0, 0, 0);
   color:rgb(30, 255, 0);
   border-color:rgb(30, 255, 0);
 }
+select:focus {
+  background-color: rgb(0, 0, 0);
+  color:rgb(30, 255, 0);
+  border-color:rgb(30, 255, 0);
+}
+
+
+
 
 .btn-outline-secondary {
   outline: 2px solid yellow ;
