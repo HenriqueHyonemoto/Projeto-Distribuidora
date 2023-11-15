@@ -1,3 +1,5 @@
+
+
 @html.extend('layout', function(model){ 
 
 @html.block('content', function(model){
@@ -28,7 +30,7 @@
 
   <div class="container-fluid px-4 " style ="/* Can be in percentage also. */
   height: auto;
-  margin-left: 30%;
+  margin-left: 32%;
   padding: 60px;
   position: relative;
 ">

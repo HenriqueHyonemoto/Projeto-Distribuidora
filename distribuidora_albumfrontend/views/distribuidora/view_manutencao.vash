@@ -72,8 +72,7 @@
                             <tbody>
                                 @model.data.registro.forEach(function(registro){
                                 <tr>                                    
-                                    <td><a href="/distribuidora/opendistribuidoraUpdate/@registro.distribuidoraid" class="btn btn-info btn-sm"><i
-                                        class="fa fa-magnifying-glass"></i>Visualizar</a></td>
+                                    <td><a href="/distribuidora/opendistribuidoraUpdate/@registro.distribuidoraid" class="btn btn-info btn-sm"><i class="fa fa-magnifying-glass"></i>Visualizar</a></td>
                                     <td>@registro.numero_distribuidora</td>
                                     <td>@registro.nome_distribuidora</td>
                                     <td>@(registro.ativo ? "Sim" : "Não")</td>                                    

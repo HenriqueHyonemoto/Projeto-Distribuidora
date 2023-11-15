@@ -2,17 +2,54 @@
 
 @html.block('content', function(model){
 
+  <style>
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -100;
+    background: url(images/VideoImg.jpg)
+    no-repeat center;
+    background-size:cover;
+  }
+
+  table, th, td {
+  outline: 1px solid yellow ;
+    outline-style: dotted;
+    background-color: black;
+    color: white;
+}
+        </style>
+<video autoplay muted loop id="background-video">
+    <source src="videos/VideoBack.mp4" type="video/mp4">
+</video>
+
 
 <main>
 
-    <div class="container-fluid px-4">
+    <div class="container-fluid px-4" style ="/* Can be in percentage also. */
+    margin-top: 7%;
+    height: 50%;
+    position: relative;
+    ">
         <h1 class="mt-4">@model.title</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">@model.title</li>
         </ol>
+
+        
         <div class="row">
             <div class="col-xl-12">
-                <div class="card mb-4">
+                <div class="card mb-4" style ="background-color:black;outline: 2px solid yellow ;
+                outline-style: dotted;
+                background-color: rgba(0, 0, 0, 0.850);
+                color: white;
+                box-shadow: 3px 3px  #ff00b3;" >
                     <div class="col-2 ms-1 mt-1 mb-2">
 
                         <button type="button" class="btn btn-primary"
@@ -36,16 +73,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @model.data.registro.forEach(function(registro){
-                                <tr>                                    
-                                    td><a href="/album/openalbumUpdate/@registro.albumid" class="btn btn-info btn-sm"><i
-                                        class="fa fa-magnifying-glass"></i>Visualizar</a></td>
-                                    <td>@registro.numero_album</td>
-                                    <td>@registro.nome_album</td>
-                                    <td>@registro.data_publicacao</td>
-                                    <td>@registro.nome_distribuidora</td>
-                                </tr>
-                                })
+                            @model.data.registro.forEach(function(registro){
+                                <tr>                                   
+                                     <td><a href="/album/viewAlbum/@registro.albumid/v" class="btn btn-info btn-sm"><i class="fa fa-magnifying-glass"></i>Visualizar</a></td> 
+                                    <td>@registro.numero_album</td> 
+                                     <td>@registro.nome_album</td> 
+                                    <td>@registro.data_publicacao</td> 
+                                    <td>@registro.nome_distribuidora</td> 
+                                 </tr>
+                                 })
                             </tbody>
                             <tfoot>
                                 <tr>
