@@ -121,6 +121,11 @@ const insertAlbum = (req, res) =>
           oper: oper,
           userName: userName,
         });
+        if (resp.data.status == "ok") {
+          res.json({ status: "ok", mensagem: "Distribuidora atualizado com sucesso!" });
+        } else {
+          res.json({ status: "erro", mensagem: "Erro ao atualizar distribuidora!" });
+        }
       }
     } catch (erro) {
       console.log(

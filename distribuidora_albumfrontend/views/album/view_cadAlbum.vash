@@ -53,30 +53,30 @@
         </ol>
                         <form  id="form">
                             <div class="mb-1" style="display: none">
-                                <input type="text" name="id" value="@model.data.albumid" class="form-control" id="id">
+                                <input type="text" name="id" value="@model.data.albumid" class="form-control required" id="id">
                             </div>
                             <div class="mb-1">
                                 <label for="numero_album" class="form-label">Número do Album</label>
-                                <input type="text" name="numero_album" value="@model.data.numero_album" class="form-control"
+                                <input type="text" name="numero_album" value="@model.data.numero_album" class="form-control required"
                                     id="numero_album" @(model.oper=='v' ? 'disabled' : '' )>
                             </div>
 
                             <div class="mb-1">
                                 <label for="nome_album" class="form-label">nome do Album</label>
-                                <input type="text" name="nome_album" value="@model.data.nome_album" class="form-control" id="nome_album"
+                                <input type="text" name="nome_album" value="@model.data.nome_album" class="form-control required" id="nome_album"
                                     @(model.oper=='v' ? 'disabled' : '' )>
                             </div>
 
                             <div class="mb-1">
                                 <label for="valor" class="form-label">Valor do album</label>
                                 <input type="text" name="valor" value="@model.data.valor"
-                                    class="form-control" id="valor" data-thousands="." data-decimal=","
+                                    class="form-control required" id="valor" data-thousands="." data-decimal=","
                                     @(model.oper=='v' ? 'disabled' : '' )>
                             </div>
 
                             <div class="mb-1">
-                                <label for="" class="form-label">Distribuidora</label>
-                                <select class="form-select" aria-label="Default select example" id="distribuidoraid"
+                                <label for="" class="form-label ">Distribuidora</label>
+                                <select class="form-select required" aria-label="Default select example" id="distribuidoraid"
                                     @(model.oper=='v' ? 'disabled' : '' ) name="distribuidoraid">
                                     @model.distribuidora.forEach(function(item){
                                     @if(model.data.distribuidoraid === item.distribuidoraid) {
@@ -92,7 +92,7 @@
                                 <label for="data_publicacao" class="form-label">Data da Publicação
                                 <span style="color: red;">*</span></label>
                                 <input type="date" name="data_publicacao" value="@model.data.data_publicacao"
-                                    class="form-control" id="data_publicacao" @(model.oper=='v' ? 'disabled' : '' )>
+                                    class="form-control required" id="data_publicacao" @(model.oper=='v' ? 'disabled' : '' )>
                             </div>
 
                             @if (model.oper=="c") {
