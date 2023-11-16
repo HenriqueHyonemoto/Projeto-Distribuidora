@@ -56,34 +56,34 @@
     </ol>
             <form id="form">
               <div class="mb-1" style="display: none">
-                <input type="number" name="distribuidoraid" class="form-control" id="distribuidoraid" />
+                <input type="number" name="distribuidoraid" class="form-control required" id="distribuidoraid" />
               </div>
              <div class="mb-1 ">
                 <label for="numero_distribuidora" class="col-sm-2 col-xxl-12 col-form-label required">Número da Distribuidora:</label>
                 <div class="col-sm-4 col-xxl-12">
-                  <input type="text" name="numero_distribuidora" class="form-control" id="numero_distribuidora" maxlength="10"/>
+                  <input type="text" name="numero_distribuidora" class="form-control required" id="numero_distribuidora" maxlength="10"/>
                 </div>
                 
                 <label for="sede_distribuidora" class="col-sm-2 col-xxl-12 col-form-label required">Sede:</label>
                 <div class="col-sm-4 col-xxl-12">
-                  <input type="text" name="sede_distribuidora" class="form-control" id="sede_distribuidora" maxlength="10"/>
+                  <input type="text" name="sede_distribuidora" class="form-control required"  id="sede_distribuidora" maxlength="10"/>
                 </div>
 
                 <label for="nome_distribuidora" class="col-sm-2 col-xxl-12 col-form-label required">Nome da Distribuidora:</label>
                 <div class="col-sm-4 col-xxl-12">
-                  <input type="text" name="nome_distribuidora" class="form-control" id="nome_distribuidora" maxlength="50"/>
+                  <input type="text" name="nome_distribuidora" class="form-control required" id="nome_distribuidora" maxlength="50"/>
                 </div>
               </div>
 
               <div class="mb-1 ">
                 <label for="fundacao" class="col-sm-2 col-xxl-12 col-form-label required">Data de Criação</label>
                 <div class="col-sm-4 col-xxl-12">
-                  <input type="date" name="fundacao" class="form-control" id="fundacao"/>
+                  <input type="date" name="fundacao" class="form-control required" id="fundacao"/>
                 </div>
 
                 <label for="taxa_vendas" class="col-sm-2 col-xxl-12 col-form-label required">Taxa das Vendas:</label>
                 <div class="col-sm-4 col-xxl-12">
-                  <input type="text" name="taxa_vendas" class="form-control" id="taxa_vendas" placeholder="0.0" maxlength="5"/>
+                  <input type="text" name="taxa_vendas" class="form-control required" id="taxa_vendas" placeholder="0.0" maxlength="5"/>
                 </div>
               </div>
 
