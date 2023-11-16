@@ -29,9 +29,9 @@ create table IF NOT EXISTS album (
 );
 
 insert into album values 
-(default,'001','Lo-fi infinito','2000-01-31',6891.60, true,
+(default,'001','Lo-fi infinito','2000-01-31',6891.60, 
  (SELECT distribuidoraid from distribuidora where numero_distribuidora = '001')),
-(default,'002','José das Neves','2024-02-08',372.41, true,
+(default,'002','José das Neves','2024-02-08',372.41, 
  (SELECT distribuidoraid from distribuidora where numero_distribuidora = '007'))
  ON CONFLICT DO NOTHING;
 

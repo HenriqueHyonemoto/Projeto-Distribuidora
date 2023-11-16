@@ -56,7 +56,6 @@ const insertAlbum = (req, res) =>
         );
         console.log("[crlAlbum|insertAlbum] valor de distribuidora:", distribuidora.data.registro);
         registro = {
-          albumid: 0,
           numero_album: "",
           nome_album: "",
           data_publicacao: "",
@@ -78,7 +77,6 @@ const insertAlbum = (req, res) =>
         resp = await axios.post(
           process.env.SERVIDOR_DW3 + "/insertAlbum",
           {
-            albumid: 0,
             numero_album: albumREG.numero_album,
             nome_album: albumREG.nome_album,
             data_publicacao: albumREG.data_publicacao,
@@ -96,9 +94,8 @@ const insertAlbum = (req, res) =>
 
         console.log("[ctlAlbum|insertAlbum] resp:", resp.data);
         if (resp.data.status == "ok") {
-          //res.json({ status: "ok" });
+          res.json({ status: "ok" });
           registro = {
-            albumid: 0,
             numero_album: "",
             nome_album: "",
             data_publicacao: "",
