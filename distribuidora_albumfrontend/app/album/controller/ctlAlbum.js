@@ -94,7 +94,6 @@ const insertAlbum = (req, res) =>
 
         console.log("[ctlAlbum|insertAlbum] resp:", resp.data);
         if (resp.data.status == "ok") {
-          <script>alert("susmogus")</script>
           res.json({ status: "ok" });
           registro = {
             numero_album: "",
