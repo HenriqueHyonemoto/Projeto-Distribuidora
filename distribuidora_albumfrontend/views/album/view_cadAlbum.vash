@@ -54,30 +54,30 @@
         </ol>
                         <form  id="form">
                             <div class="mb-1" style="display: none">
-                                <input type="text" name="id" value="@model.data.albumid" class="form-control required" id="id">
+                                <input  type="text" name="id" value="@model.data.albumid" class="form-control required" id="id" >
                             </div>
                             <div class="mb-1">
-                                <label for="numero_album" class="form-label">Número do Album</label>
-                                <input type="text" name="numero_album" value="@model.data.numero_album" class="form-control required"
+                                <label for="numero_album" class="form-label required">Número do Album</label>
+                                <input  type="text" name="numero_album" value="@model.data.numero_album" class="form-control"
                                     id="numero_album" @(model.oper=='v' ? 'disabled' : '' )>
                             </div>
 
                             <div class="mb-1">
-                                <label for="nome_album" class="form-label">nome do Album</label>
-                                <input type="text" name="nome_album" value="@model.data.nome_album" class="form-control required" id="nome_album"
+                                <label for="nome_album" class="form-label required">nome do Album</label>
+                                <input type="text" name="nome_album" value="@model.data.nome_album" class="form-control" id="nome_album"
                                     @(model.oper=='v' ? 'disabled' : '' )>
                             </div>
 
                             <div class="mb-1">
-                                <label for="valor" class="form-label">Valor do album</label>
+                                <label for="valor" class="form-label required">Valor do album</label>
                                 <input type="text" name="valor" value="@model.data.valor"
-                                    class="form-control required" id="valor" data-thousands="." data-decimal=","
+                                    class="form-control" id="valor" data-thousands="." data-decimal=","
                                     @(model.oper=='v' ? 'disabled' : '' )>
                             </div>
 
                             <div class="mb-1">
-                                <label for="" class="form-label ">Distribuidora</label>
-                                <select class="form-select required" aria-label="Default select example" id="distribuidoraid"
+                                <label for="" class="form-label required">Distribuidora</label>
+                                <select class="form-select" aria-label="Default select example" id="distribuidoraid"
                                     @(model.oper=='v' ? 'disabled' : '' ) name="distribuidoraid">
                                     @model.distribuidora.forEach(function(item){
                                     @if(model.data.distribuidoraid === item.distribuidoraid) {
@@ -93,7 +93,7 @@
                                 <label for="data_publicacao" class="form-label">Data da Publicação
                                 <span style="color: red;">*</span></label>
                                 <input type="date" name="data_publicacao" value="@model.data.data_publicacao"
-                                    class="form-control required" id="data_publicacao" @(model.oper=='v' ? 'disabled' : '' )>
+                                    class="form-control" id="data_publicacao" @(model.oper=='v' ? 'disabled' : '' )>
                             </div>
 
                             @if (model.oper=="c") {
@@ -139,11 +139,25 @@
     })
 
     $('#form').on('submit', function () {
+        if ($('#data_publicacao').val() == "" || $('#numero_album').val() == "" || $('#nome_album').val() == ""){
+
+        
         if ($('#data_publicacao').val() == "") {
             // $('#errormessage').html("Please provide at least an email ");
             alert("Informe a data de publicacao");
             return false;
-        } else {
+        } 
+        if ($('#numero_album').val() == "") {
+            // $('#errormessage').html("Please provide at least an email ");
+            alert("Informe o numero do album");
+            return false;
+        }
+        if ($('#nome_album').val() == "") {
+            // $('#errormessage').html("Please provide at least an email ");
+            alert("Informe o nome do album");
+            return false;
+        }}
+        else{
             $('#valor').val($('#valor').maskMoney('unmasked')[0]);
             return true;
         }
