@@ -141,12 +141,6 @@
     $('#form').on('submit', function () {
         if ($('#data_publicacao').val() == "" || $('#numero_album').val() == "" || $('#nome_album').val() == ""){
 
-        
-        if ($('#data_publicacao').val() == "") {
-            // $('#errormessage').html("Please provide at least an email ");
-            alert("Informe a data de publicacao");
-            return false;
-        } 
         if ($('#numero_album').val() == "") {
             // $('#errormessage').html("Please provide at least an email ");
             alert("Informe o numero do album");
@@ -156,7 +150,13 @@
             // $('#errormessage').html("Please provide at least an email ");
             alert("Informe o nome do album");
             return false;
-        }}
+        }
+        if ($('#data_publicacao').val() == "") {
+            // $('#errormessage').html("Please provide at least an email ");
+            alert("Informe a data de publicacao");
+            return false;
+        } 
+        }
         else{
             $('#valor').val($('#valor').maskMoney('unmasked')[0]);
             return true;
