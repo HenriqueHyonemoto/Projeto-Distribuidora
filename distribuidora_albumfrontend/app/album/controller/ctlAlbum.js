@@ -5,11 +5,13 @@ const moment = require("moment");
 const getAllAlbum = (req, res) =>
   (async () => {
     userName = req.session.userName;
+    token = req.session.token;
     try {
       resp = await axios.get(process.env.SERVIDOR_DW3 + "/getAllAlbum", {headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + token,
       },});
+      console.log(resp);
       res.render("album/view_manutencao", {
         title: "Manutenção de album",
         data: resp.data,
