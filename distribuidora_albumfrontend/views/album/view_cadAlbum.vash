@@ -136,6 +136,12 @@
 
     $(function () {
         $('#valor').maskMoney();
+        if (@(model.cadastradoComSucesso != null) && @(model.cadastradoComSucesso == true)){
+            alert('Album Cadastrado com Sucesso!');
+        }
+        if (@(model.cadastradoComSucesso != null) && @(model.cadastradoComSucesso == false)){
+            alert('Houve um erro ao Cadastrar o Album!');
+        }
     })
 
     $('#form').on('submit', function () {

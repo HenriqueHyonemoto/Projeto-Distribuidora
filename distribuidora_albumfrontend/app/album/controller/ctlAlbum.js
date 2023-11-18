@@ -94,7 +94,6 @@ const insertAlbum = (req, res) =>
 
         console.log("[ctlAlbum|insertAlbum] resp:", resp.data);
         if (resp.data.status == "ok") {
-          res.json({ status: "ok" });
           registro = {
             numero_album: "",
             nome_album: "",
@@ -102,6 +101,7 @@ const insertAlbum = (req, res) =>
             valor: "0.00",
             distribuidoraid: 0,
             removido: false,
+
           };
         } else {
           registro = albumREG;
@@ -120,6 +120,7 @@ const insertAlbum = (req, res) =>
           distribuidora: distribuidora.data.registro,
           oper: oper,
           userName: userName,
+          cadastradoComSucesso: resp.data.status == 'ok'
         });
       }
     } catch (erro) {
