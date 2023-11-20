@@ -8,6 +8,11 @@ node app.js
 ```
 npm i
 ```
+### Caso "Error: Cannot find module 'express'" no Linux
+```
+npm i express dotenv
+```
+
 # Comandos inicialização front
 
 ### usuario e senha
