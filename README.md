@@ -40,7 +40,7 @@ set DEBUG=distribuidora_albumfrontNode:*
 npm start
 ```
 
-Trabalho para 22/11/2023
+http://localhost:40100/Login
 
 ### O album deverá implementar um conjunto de APIs e interface gráfica para realizar o CRUD referente a duas tabelas que se relacionam do tipo 1:N
 
