@@ -81,11 +81,5 @@ removido boolean, <br>
 ativo boolean,<br>
 ) <br>
 
-# Video Teste
-
-https://youtu.be/THoXsf7KVRU
-
-Autenticação
-https://youtu.be/EY9Hx8XDnaw
 
     
