@@ -1,3 +1,12 @@
+# Demonstração das Funcionalidades
+
+<a href="https://youtu.be/THoXsf7KVRU"></a>
+
+# Demonstração da Autenticação.
+
+<a href="https://youtu.be/EY9Hx8XDnaw"></a>
+
+
 # DW3S6-2023-Trabalho2
 
 # Comandos inicialização back
