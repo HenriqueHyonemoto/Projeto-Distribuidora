@@ -34,6 +34,8 @@ set DEBUG=distribuidora_albumfrontNode:*
 ```
 npm start
 ```
+
+### Inicie o PgAdmin4 caso necessário.
 # IP
 
 http://localhost:40100/Login
