@@ -1,11 +1,6 @@
 # Demonstração das Funcionalidades
 
-<a href="https://youtu.be/THoXsf7KVRU"></a>
-
-# Demonstração da Autenticação.
-
-<a href="https://youtu.be/EY9Hx8XDnaw"></a>
-
+<a href="https://www.youtube.com/watch?v=EY9Hx8XDnaw&list=PLCgDQLCOd0v3OtrPo9xLic5G2_Tb_RIcj"> ![image](https://github.com/user-attachments/assets/971d20a3-c0bc-4a7f-9124-99de7904fa14) </a>
 
 # DW3S6-2023-Trabalho2
 
